@@ -3,8 +3,9 @@ import { useState } from "react";
 
 function Todo() {
   // const [todos, setTodo] = useState(JSON.parse(window.localStorage.getItem("data")));
-  // window.localStorage.setItem("data", JSON.stringify(todos)); 
-  const [todos, setTodo] = useState([]);
+  const [todos, setTodo] = useState(JSON.parse(window.localStorage.getItem("data")));
+  // const [todos, setTodo] = useState([]);
+  window.localStorage.setItem("data", JSON.stringify(todos)); 
   const handleAddTodo = (evt) => {
     if (evt.keyCode === 13) {
       const newTodo = {
