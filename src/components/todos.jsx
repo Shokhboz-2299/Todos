@@ -22,7 +22,7 @@ function Todo() {
        <h2 className = "heading">To do list</h2>
       <input className = "writeInput" type="text" placeholder = "write list element" onKeyUp={handleAddTodo} required />
       {
-        todos.length > 0 &&
+        todos?.length > 0 &&
          (
           <ul className = "toDoList">
             {
