@@ -9,7 +9,7 @@ function Todo() {
   const handleAddTodo = (evt) => {
     if (evt.keyCode === 13) {
       const newTodo = {
-        id: todos.at(-1) ? todos.at(-1).id + 1 : 1,
+        id: todos?.at(-1) ? todos.at(-1).id + 1 : 1,
         value: evt.target.value,
         isComplated: false,
       };
@@ -26,7 +26,7 @@ function Todo() {
          (
           <ul className = "toDoList">
             {
-              todos.map((todo) => (
+              todos?.map((todo) => (
                 <li className = "toDoItem" key={todo.id}>
                   <input className = "checkboxInput" type="checkbox"  onChange = { () => {
                       todo.isComplated = !todo.isComplated;
@@ -36,7 +36,7 @@ function Todo() {
                   <span className = {todo.isComplated? "deletelist": "staylist" } >{todo.value}</span>
                   <button onClick={ () => {
                   if (todo.isComplated) {
-                    setTodo(todos.filter(
+                    setTodo(todos?.filter(
                       (item) => item.id !== todo.id
                     ))
                   }
