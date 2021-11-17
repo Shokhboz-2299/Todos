@@ -9,7 +9,7 @@ function Todo() {
   const handleAddTodo = (evt) => {
     if (evt.keyCode === 13) {
       const newTodo = {
-        id: todos?.at(-1) ? todos.at(-1).id + 1 : 1,
+        id: todos?.at(-1) ? todos?.at(-1).id + 1 : 1,
         value: evt.target.value,
         isComplated: false,
       };
